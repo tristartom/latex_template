@@ -15,4 +15,13 @@ latex "$filename"
 latex "$filename"
 dvips "$filename" -o "$filename".ps
 ps2pdf "$filename".ps "$filename".pdf
-evince $filename.pdf &
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # Ubuntu
+    evince $filename.pdf &
+else 
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    open -a Preview $filename.pdf &
+  fi
+fi
