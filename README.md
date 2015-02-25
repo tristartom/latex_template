@@ -6,6 +6,8 @@ Basic template for writing latex
 
 ### On Mac OSX
 
+Install MacTex: downdload the 2.5G installation package [[link](http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg)], and install it
+
 ### On Ubuntu
 
 
