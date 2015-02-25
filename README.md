@@ -16,6 +16,9 @@ sudo apt-get update
 sudo apt-get install texlive
 ```
 
+(This might take long time.)
+
+
 2. Write your content in ``mainbody.tex``
 ---
 
