@@ -4,11 +4,11 @@ Basic template for writing latex
 1. Install latex
 ---
 
-### On Mac OSX
+##### On Mac OSX
 
-Install MacTex: downdload the 2.5G installation package [[link](http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg)], and install it
+Install MacTex: downdload the 2.5G installation package [[link](http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg)], and install it.
 
-### On Ubuntu
+##### On Ubuntu
 
 ```bash
 sudo add-apt-repository ppa:texlive-backports/ppa
@@ -19,6 +19,7 @@ sudo apt-get install texlive
 2. Write your content in ``mainbody.tex``
 ---
 
+Here is a good tutorial for writing latex [[link](http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/)].
 
 
 3. Compile latex (to pdf)
