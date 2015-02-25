@@ -10,7 +10,11 @@ Install MacTex: downdload the 2.5G installation package [[link](http://mirror.ct
 
 ### On Ubuntu
 
-
+```bash
+sudo add-apt-repository ppa:texlive-backports/ppa
+sudo apt-get update
+sudo apt-get install texlive
+```
 
 2. Write your content in ``mainbody.tex``
 ---
