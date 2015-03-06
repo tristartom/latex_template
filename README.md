@@ -37,6 +37,7 @@ Here is a good tutorial for writing latex [[link](http://www.maths.tcd.ie/~dwilk
 4. FAQ
 ---
 
-Problem: ``ps2pdf`` does not work in ``latex.sh`` 
+Problem: ``ps2pdf`` does not work in ``latex.sh``
+
 Fix: `` sudo ln -s /opt/X11 /usr/X11``
 
