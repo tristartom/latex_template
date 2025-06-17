@@ -29,9 +29,7 @@ Here is a good tutorial for writing latex [[link](http://www.maths.tcd.ie/~dwilk
 ---
 
 ```bash
-./tt_sh/latex.sh latex.
-#Or 
-./tt_sh/latex.sh latex
+make
 ```
 
 4. FAQ
