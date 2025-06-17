@@ -1,0 +1,124 @@
+%IEEE template
+\ifdefined\TTSTYLETARGETllncs
+\documentclass{sty/llncs2e/llncs}
+  \input{sty/usepackage_config.tex}
+  \input{sty/llncs2e/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETreport
+  \documentclass[times, 10pt, onecolumn]{report}
+  \input{sty/ieeetran/complementary_newdefines.cls}
+  \input{sty/ieeetran/usepackage.tex}
+  \input{sty/report/usepackage.tex}
+  \input{sty/usepackage_config.tex}
+  \input{sty/report/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETonecolumn
+  \documentclass[times, 10pt, onecolumn]{IEEEtran}
+  \input{sty/ieeetran/complementary_newdefines.cls}
+  \input{sty/ieeetran/usepackage.tex}
+  \input{sty/usepackage_config.tex}
+  \input{sty/ieeetran/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETieeetran
+  \documentclass[10pt, conference, compsocconf]{IEEEtran}
+  \input{sty/ieeetran/complementary_newdefines.cls}
+  \input{sty/ieeetran/usepackage.tex}
+  \input{sty/usepackage_config.tex}
+  \input{sty/ieeetran/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETsig
+  \documentclass{sty/sig/acm_proc_article-sp}
+  \input{sty/sig-alternate/complementary_newdefines.cls}
+  \input{sty/usepackage_config.tex}
+  \input{sty/sig-alternate/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETsigalternate
+  \documentclass{sty/sig-alternate/sig-alternate}
+  \input{sty/sig-alternate/complementary_newdefines.cls}
+  \input{sty/usepackage_config.tex}
+  \input{sty/sig-alternate/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETusenix
+  \documentclass[letterpaper,twocolumn,10pt]{article}
+  \input{sty/usenix/complementary_newdefines.cls}
+  \input{sty/usenix/usepackage.tex}
+  \input{sty/usepackage_config.tex}
+  \input{sty/usenix/titlepage.tex}
+\fi
+\ifdefined\TTSTYLETARGETllncs
+\else
+\input{sty/common-newdefines.tex}
+\fi
+
+\ifdefined\TTTARGETaddon
+  \input{text/mainbody.tex}
+\fi
+
+\ifdefined\TTTARGETaddontwo
+  \input{text/mainbody.tex}
+\fi
+
+\ifdefined\TTTARGETdone
+  \input{text/abstract.tex}
+  \input{text/introduction.tex}
+  \input{text/background.tex}
+  \input{text/mainbody.tex}
+  \input{text/experiment.tex}
+  \input{text/casestudy.tex}
+  \input{text/relatedwork.tex} %related work should always be the last to write.
+  \input{text/conclusion.tex}
+\fi
+
+\ifdefined\TTSTYLETARGETonecolumn
+  \bibliographystyle{IEEEtran}
+\fi
+\ifdefined\TTSTYLETARGETieeetran
+  \bibliographystyle{IEEEtran}
+\fi
+\ifdefined\TTSTYLETARGETsigalternate
+  \bibliographystyle{abbrv}
+\fi
+\ifdefined\TTSTYLETARGETsig
+  \bibliographystyle{abbrv}
+\fi
+\ifdefined\TTSTYLETARGETusenix
+  \bibliographystyle{acm}
+\fi
+
+\ifdefined\TTSTYLETARGETreport
+  \printbibliography
+%note the list of bib is mentioned in sty/usepackage_config.tex
+\else
+  \bibliography{ads,lsm,bkc,odb,cacheattacks,sc,crypto,sgx,diffpriv,txtbk,distrkvs,vc,yuzhetang}
+\fi
+
+\ifdefined\TTSTYLETARGETsigalternate
+  \appendix
+\else
+ \ifdefined\TTSTYLETARGETusenix
+   \appendix
+ \else
+  \ifdefined\TTSTYLETARGETvldb
+    \appendix
+  \else
+  \ifdefined\TTSTYLETARGETreport
+    \appendix
+  \else
+    \ifdefined\TTSTYLETARGETllncs
+      \appendix
+    \else
+      \appendices
+    \fi
+  \fi
+ \fi
+\fi
+\fi
+
+\input{text/appendix.tex}
+\ifdefined\TTUT
+\fi
+
+\end{document}
+
+
+

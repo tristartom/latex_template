@@ -1,0 +1,20 @@
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\usepackage{titlesec}
+{\filcenter\normalfont\Large\bfseries}
+\titleformat{\chapter}
+  {\normalfont\sffamily\LARGE\it}
+  {\thechapter.}{10pt}{\LARGE}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries}
+  {\thesection.}{0.3em}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\it}
+  {\thesubsection.}{0.3em}{}
+
+
+

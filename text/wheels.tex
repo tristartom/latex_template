@@ -1,0 +1,300 @@
+\section{learning}
+
+\begin{theorem}
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\subsection{tables}
+
+{\scriptsize \begin{verbatim} in beamer, see beamer_learn_slides. http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular.2A_environment_-_controlling_table_width
+\end{verbatim}}
+
+table with reference~\ref{tab:auth-attack}
+
+
+\begin{table*}[!htbp] %force in current page, disable float.
+\caption{Example of authorized searcher attack}
+\label{tab:auth-attack}\centering{\small
+\begin{tabularx}{0.5\textwidth}{ |X|c|c|c|c|c| }
+  \hline
+   & $p_0$ & $p_1$ & $p_2$ & $p_3$ & $p_4$ \\ \hline
+  $r_a$ & $1$ & $0$ & $1$ & $0$ & $?$ \\ \hline
+\end{tabularx}
+}
+\end{table*}
+
+tabular (not table)
+
+\begin{tabularx}{0.4\textwidth}{ |X|c|c|c| } %X is stretching to \textwidth, while c is to match with text width in cell.
+  \hline
+  label1                    & label2 & label3 & label4 \\ \hline
+  \multirow{2}{*}{multi-row} 
+                             & item2  & item3  & item4  \\ \cline{2-4}
+                             & item2'  & item3'  & item4'  \\ \hline
+  \multicolumn{2}{|l|}{multi-column}   & item3''  & item4''  \\  \hline
+  \multirow{5}{*}{\begin{sideways}sideways\end{sideways}}
+                             & item2  & item3  & item4  \\ \cline{2-4}
+                             & \shortstack[l]{item2'\\item2''}  & item3'  & item4'  \\ \cline{2-4}
+                             & \shortstack[r]{item2'\\item2''}  & item3'  & item4'  \\ \cline{2-4}
+                             & item2'  & item3'  & item4'  \\ \cline{2-4}
+                             & item2'  & item3'  & item4'  \\ \hline
+\end{tabularx}
+
+Table with diagbox
+
+\begin{tabular}{|c|c|}
+    \hline
+    alghreaiog & bghsah \\
+    \hline
+    cagja & \notableentry \\
+    \hline
+    \cellcolor{blue} & edkhaklgjaj \\
+    \hline
+\end{tabular}
+
+\begin{tabular}{|p{4cm}|p{3cm}|}
+    \hline
+    alghreaiog & bghsah \\
+    \hline
+    cagja\par bla & \notableentry \\
+    \hline
+    \cellcolor{blue} & edkhaklgjaj \par xyz \\
+    \hline
+\end{tabular}
+
+Table line/cell/column colored
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|ccccccc}
+\hline
+& col1 & col2 & col3 & col4 & col5 & col6 & col7 \\
+\hline
+\rowcolor{LightCyan}
+row1& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row2& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+\rowcolor{LightCyan}
+row3& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row4& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+\rowcolor{LightCyan}
+row5& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row6& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+\hline
+\end{tabular}
+\end{table}
+
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|g|c|g|c|g|c|g}
+\hline
+&col1 &col2 &col3 &col4 & col5 &col6 &col7\\
+\hline
+row1& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row2& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row3& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row4& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row5& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+row6& \ra & \ra & \ra & \ra & \ra & \ra & \ra \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\subsection{figures}
+\begin{wrapfigure}{r}{0.35\textwidth}
+\centering
+\includegraphics[width=0.324\textwidth]{figures2/eff_rand_num_sample0.5.eps}
+\caption{Wrapped figure}
+\label{fig:perf}
+\end{wrapfigure}
+
+\ifdefined\TTUT
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[angle=90, width=0.45\textwidth]{figures2/eff_rand_num_sample0.5.eps}%
+\end{center}
+%\vspace{-0.15in}
+\caption{Easy figure}\label{fig:easy}
+\vspace{-0.10in}\end{figure}
+
+\begin{figure*}[!ht]
+  \begin{center}
+  %\goodgap
+    \subfloat[Rotated]{%
+      \includegraphics[angle=90, width=0.3\textwidth]{figures2/eff_rand_num_sample0.5.eps}%
+      \label{exp:rand_num_1}%
+    }%
+    %\hspace{-0.2cm}%
+    \subfloat[With more shared threads]{%
+      \includegraphics[width=0.3\textwidth]{figures2/eff_rand_num_sample2.eps}%
+      \label{exp:rand_num_2}%
+    }%
+    \subfloat[With sample ratio]{%
+      \includegraphics[width=0.3\textwidth]{figures2/eff_rand_sample_num10.eps}%
+      \label{exp:rand_sample}%
+    }%
+  \end{center}%\vspace{-0.15in}
+  \caption{Performance of optimization algorithm with random graph}\label{fig:complex}\vspace{-0.10in}
+\end{figure*}
+\fi
+
+\subsection{algorithms}
+\begin{algorithm}[h]
+\caption{range-query(range $R$)}\small \label{alg:rangequery}
+\begin{algorithmic}[1]
+  \boldnext\State $\omega_R\leftarrow $ lowest-common-ancestor($R$) \Comment{comments: line number boldened}
+  \State $\lambda\leftarrow $ DHT-lookup($f_{md}(\omega_R)$)
+  \ForAll{$p \in P$} \Comment{comments: loop over all items}
+    \State manipulate each term $p$
+  \EndFor
+  \If{$\lambda == NULL \And 1 \leq 0$}
+      \State \Return lookup($R$.top\_left\_corner)
+  \ElsIf{$R\subseteq{\lambda}$}
+      \State \Return the keys of $\lambda$ that are in the range $R$
+  \Else
+      \State \Return recursive-forward($R$, $\omega_R$)
+  \EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{equations}
+\begin{eqnarray}
+u &=& \sum_{l=0}^{n-1}{u_l} \mod{q} %\nonumber \\
+=(\sum_{l=0}^{n-1}{ \sum_{j=0}^{c-1}{u_{l-j, j}} \mod{q}})\mod{q} \nonumber \\
+&=& (\sum_{j=0}^{c-1}{ \sum_{l=0}^{n-1}{ u_{l-j, j} } })\mod{q} %\nonumber \\
+=(\sum_{j=0}^{c-1}{ \sum_{i=-j}^{n-1-j}{ u_{i, j} } })\mod{q} \nonumber \\
+&=& (\sum_{j=0}^{c-1}{\sum_{i=0}^{n-1}{ u_{i, j} } }) mod q
+= (\sum_{i=0}^{n-1}{ \sum_{j=0}^{c-1}{ u_{i, j} }\mod{q} })\mod{q} \nonumber \\
+&=& \sum_{i=0}^{n-1}{ v_i }\mod{q} = \sum_{i=0}^{n-1}{ v_i } = v
+\end{eqnarray}
+
+With right brace
+\begin{eqnarray}
+\underline{\sigma}, \epsilon \rightarrow{}\underline{\beta_*}
+\begin{cases}
+\begin{rcases}
+\begin{rcases}
+& \sum_{\forall\beta_*>1}{(\beta_* - 1)} \\
+& \sum_{\forall\beta_*<1}{(1 - \beta_*)} \\  
+\end{rcases} \rightarrow{} \underline{X_1}\% \\
+\sum_{\beta_*<1}{1} \rightarrow{} \underline{X_2}\%
+\end{rcases}
+\end{cases}
+ \rightarrow{\beta}
+\end{eqnarray}
+
+\subsection{listing}
+\lstset{language=SQL, style=Oracle, caption={Rewritten query against a single view table},label=sql:rewritten}
+\lstset{frame=lrbt,xleftmargin=\fboxsep,xrightmargin=-\fboxsep} %with bounding box at l(eft)r(right)b(ottom)t(op)
+%or you can replace it with "frame=single"
+\begin{lstlisting}
+  SELECT A, C FROM viewtable
+  ORDER BY C LIMIT arg.k
+\end{lstlisting}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\begin{figure}[h!]
+%\begin{scriptsize}
+%\begin{tabular}{cc}
+%\begin{minipage}{.5\textwidth}
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  %basicstyle=\footnotesize\ttfamily,        % the size of the fonts that are used for the code
+  basicstyle=\scriptsize\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={(*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  %frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\scriptsize\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+  moredelim=[is][\bf]{*}{*},
+}
+\begin{lstlisting}
+public void OnTouchEvent(MotionEvent e) {
+Bitmap LoadPicture(String path) {
+    ...
+    *Bitmap bm = BitmapFactory.decodeFile(file)*;
+    return bm;
+}
+
+void EditPicture(Bitmap bm) {
+    //heavy computational picture editing
+    int i = 10 (* $*$ *); //escape to plot * literatelly instead of bolden text
+    bm.getPixels(pix, 0, mPhotoWidth, 0, 0, mPhotoWidth, mPhotoHeight);
+    for(every pixel) {
+      ...
+    }  
+    
+    //embed location information into picture
+    (* $*$*)Location loc = getLastKnownLocation(Provider)*;
+    (* $*$*)double longitude = loc.getLongitude()*;
+    (* $*$*)double latitude = loc.getLatitude()*;
+    (* $*$*)EmbedLocation(bm, longitude, latitude);*
+}
+\end{lstlisting}
+%\end{minipage}
+%\end{tabular}
+%\end{scriptsize}
+\caption{Privacy-preserving Offloading Example}
+\label{figure:MotivatingExample}
+\end{figure}
+
+
+\subsection{fbox}
+\begin{center}
+\fbox{This is a sample statement}
+\end{center}
+
+\begin{center}
+\fbox{\parbox{0.90\linewidth}{
+This is a long long long statement: 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+Blah blah blah blah 
+}}
+\end{center}
+
+
+
+\subsection{misc}
+\begin{itemize}
+  \item caret $\textrm{\^{}}$ 
+  \item cmark $\cmark$ and xmark $\xmark$
+  \item bold math type $\boldsymbol{<v_0, k>}$
+  \item use other than default font size: {``\fontsize{8.5}{9} this's in font size 8.5''}. (second param. should be 1.2$\times$ first param. which is font size
+  \item show tilde in url, use \textasciitilde{} rather than \~{}
+  \item strike out text, \sout{text/$12$ removed}
+  \item color, {\color{red}red}{\color{green}green}
+  \item[$\bullet$] big bullet on each item
+  \item circled text \circled{2}
+  \item A white number inside a black circle: \ballnumber{37}
+  \item empty set (beautiful version) $\varnothing$ (needs ``\\usepackage\{amssymb\}''), which renames emptyset, $\emptyset$
+  \item stackrel $\stackrel[c]{a}{=}$
+\end{itemize}
+
+citation for long breakable url~\cite{me:mssgx}

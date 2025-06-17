@@ -1,0 +1,108 @@
+%using latex.XXX file to cusotmize style
+%customized tools
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{amsfonts}
+%\usepackage{amsthm}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{multirow, graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode} %algorithm: use algorithmicx package, to refer to http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode#Typesetting_using_the_algorithmicx_package
+\usepackage{amsmath}
+
+%squeeze space 
+\setlength{\belowcaptionskip}{2pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\floatsep}{0.25\floatsep}
+\setlength{\dblfloatsep}{0.25\dblfloatsep}
+\setlength{\textfloatsep}{0.25 \textfloatsep}
+\setlength{\dbltextfloatsep}{0.25\dbltextfloatsep}
+\setlength{\intextsep}{0.25\intextsep}
+
+%reduce whitespace surrounding section titles.
+%\newcommand{\subparagraph}{} %from stackexchange: The titlesec package assumes all of the section levels provided by the standard classes are present. This includes the subparagraph level. The IEEEtrans class doesn't define a level subparagraph
+%\usepackage[compact]{titlesec}  
+%\titleformat{\paragraph}[runin]{\normalfont\itshape}{\theparagraph}{3pt}{} %keep paragraph title in the same line.
+%TODO: to add manually a ":" to each of paragraph headings!
+
+%TODO: to manually add \vspace{-.5cm} into authors and paper title, which reduce the whitespace in the front page.
+
+%\usepackage{sty/simplemargins}
+%    \setleftmargin{0.6in}
+%    \setrightmargin{0.70in}
+%    \settopmargin{0.55in}
+%    \setbottommargin{0.55in}
+
+%use to set line spacing for whole document
+%f:http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Line_spacing
+%\usepackage{setspace} %dont use this alone (with sig-alternate)! footnote with 9 will show.
+%\singlespacing
+%\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+
+\usepackage{xspace}
+
+%url
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage[breaklinks]{hyperref}
+\usepackage{breakurl}
+
+\usepackage{sty/widetext} %show equation in two columns
+
+\usepackage{stackrel}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+%cut words in middle when running out of space in a line.
+
+%\pagestyle{empty} %this removes the page number
+%\pagenumbering{gobble} %this really remove page numbers
+\thispagestyle{plain}
+\pagestyle{plain} %this enforce page number
+
+\ifdefined\TTSTYLETARGETreport
+% bibliography
+\usepackage[
+    backend=bibtex,
+    maxbibnames=100,
+    firstinits=true,
+    bibstyle=numeric,
+    citestyle=numeric
+%    bibstyle=alphabetic,
+%    citestyle=alphabetic
+]{biblatex}
+\addbibresource{ads.bib}
+\addbibresource{lsm.bib}
+\addbibresource{bkc.bib}
+\addbibresource{dos.bib}
+\addbibresource{odb.bib}
+\addbibresource{cacheattacks.bib}
+\addbibresource{sc.bib}
+\addbibresource{crypto.bib}
+\addbibresource{sgx.bib}
+\addbibresource{diffpriv.bib}
+\addbibresource{txtbk.bib}
+\addbibresource{distrkvs.bib}
+\addbibresource{vc.bib}
+\addbibresource{yuzhetang.bib}
+\fi
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+%todonotes
+\usepackage{todonotes}
+\newcommand{\tangSide}[1]{\todo[caption={},color=cyan!20!]{{\tiny Note: #1}}}
+\setlength{\marginparwidth}{1.5cm}
+\newcommand{\ignore}[1]{}
+
+\input{sty/wheels-usepackage.tex}
+\sloppy

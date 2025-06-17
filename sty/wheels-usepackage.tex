@@ -1,0 +1,92 @@
+\usepackage{graphicx, multirow}
+
+%customized packages
+\usepackage{tabularx, multirow, rotating} %tables, dependent on multirow package.
+%rotating is used for \begin{sideways} environment
+\usepackage{subfig} %figures
+\usepackage{algorithm} %algorithm
+\usepackage{algpseudocode} %algorithm: use algorithmicx package, to refer to http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode#Typesetting_using_the_algorithmicx_package
+%TOREMOVE \usepackage[noend]{algorithmic} %algorithm
+\usepackage{ulem} % strike out text
+\usepackage{color} % colored text
+
+%for listing, like SQL
+\usepackage{listings} 
+\lstdefinestyle{Oracle}{basicstyle=\ttfamily,
+                        keywordstyle=\lstuppercase,
+                        emphstyle=\itshape,
+                        showstringspaces=true,
+                        }
+\makeatletter
+\newcommand{\lstuppercase}{\uppercase\expandafter{\expandafter\lst@token
+                           \expandafter{\the\lst@token}}}
+\newcommand{\lstlowercase}{\lowercase\expandafter{\expandafter\lst@token
+                           \expandafter{\the\lst@token}}}
+\makeatother
+
+
+%for circled text
+%f: http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}} 
+
+%A white number inside a black circle.
+% \usepackage{tikz}
+\newcommand{\ballnumber}[1]{\tikz[baseline=(myanchor.base)] \node[circle,fill=.,inner sep=1pt] (myanchor) {\color{-.}\bfseries\footnotesize #1};}
+%% use it
+%\ballnumber{37}
+
+%for boldening algorithm line numbers.
+%f: http://tex.stackexchange.com/questions/99493/how-to-make-the-line-number-in-algorithm-shown-in-bold/99515#99515
+\newif\ifboldnumber
+\newcommand{\boldnext}{\global\boldnumbertrue}
+% Default definition is \footnotesize#1:
+\algrenewcommand\alglinenumber[1]{%
+  \footnotesize\ifboldnumber\bfseries\fi\global\boldnumberfalse#1:}
+
+%for rcases, or right brace
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
+%color table
+\usepackage{color, colortbl}
+%\definecolor{name}{system}{definition}
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage[first=0,last=9]{lcg}
+\newcommand{\ra}{\rand0.\arabic{rand}}
+
+%diagnal cross in table
+%also require tikz package
+\usepackage{colortbl}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+
+\newcounter{NoTableEntry}
+\renewcommand*{\theNoTableEntry}{NTE-\the\value{NoTableEntry}}
+
+\newcommand*{\notableentry}{%
+  \multicolumn{1}{@{}c@{}|}{%
+    \stepcounter{NoTableEntry}%
+    \vadjust pre{\zsavepos{\theNoTableEntry t}}% top
+    \vadjust{\zsavepos{\theNoTableEntry b}}% bottom
+    \zsavepos{\theNoTableEntry l}% left
+    \hspace{0pt plus 1filll}%
+    \zsavepos{\theNoTableEntry r}% right
+    \tikz[overlay]{%
+      \draw[red]
+        let
+          \n{llx}={\zposx{\theNoTableEntry l}sp-\zposx{\theNoTableEntry r}sp},
+          \n{urx}={0},
+          \n{lly}={\zposy{\theNoTableEntry b}sp-\zposy{\theNoTableEntry r}sp},
+          \n{ury}={\zposy{\theNoTableEntry t}sp-\zposy{\theNoTableEntry r}sp}
+        in
+        (\n{llx}, \n{lly}) -- (\n{urx}, \n{ury})
+        (\n{llx}, \n{ury}) -- (\n{urx}, \n{lly})
+      ;
+    }% 
+  }%
+}
+
