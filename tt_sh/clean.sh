@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 rm -f *.aux
 rm -f *.idx
 rm -f *.out
